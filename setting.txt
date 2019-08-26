@@ -1,0 +1,38 @@
+content: /home/lngach/Workplace/interactive-wall/public/index.html
+senser: 827312070155,230,84,62,1,0.056,0.15
+senser: 833612070323,255,84,122,0,-0.012,0.15
+wait_movie: movie000,30
+
+max_movie_count: 5
+movie: movie001,    -1.12, 1.63, -0.82, 1.87
+movie: movie008,    -0.64, 1.55, -0.35, 1.83
+movie: movie010,    -0.90, 1.10, -0.45, 1.55
+movie: movie020,    -0.95, 0.70, -0.55, 0.90
+movie: movie025,     0.11, 1.02,  0.58, 1.20
+movie: movie026,     0.60, 1.00,  0.94, 1.25
+movie: movie027,    -0.35, 1.12,  0.20, 1.38
+movie: movie034,    -0.24, 1.50,  0.26, 1.70
+movie: movie035,    -0.12, 0.78,  0.08, 0.95
+movie: movie037,     0.55, 1.75,  0.90, 1.97
+movie: movie040,     0.37, 1.30,  0.84, 1.55
+movie: movie047,    -0.48, 0.65, -0.10, 0.90
+movie: movie049,     0.07, 0.70,  0.51, 0.95
+movie: movie050,    -0.52, 0.93, -0.17, 1.10
+movie: movie051,     0.63, 0.45,  0.90, 0.95
+
+
+#movie: movie001,     0.82, 0.43,  1.12, 0.67
+#movie: movie008,     0.35, 0.47,  0.64, 0.75
+#movie: movie010,     0.45, 0.75,  0.90, 1.20
+#movie: movie020,     0.55, 1.40,  0.95, 1.60
+#movie: movie025,    -0.58, 1.10, -0.11, 1.28
+#movie: movie026,    -0.94, 1.05, -0.60, 1.30
+#movie: movie027,    -0.20, 0.92,  0.35, 1.18
+#movie: movie034,    -0.26, 0.60,  0.24, 0.80
+#movie: movie035,    -0.08, 1.35,  0.12, 1.52
+#movie: movie037,    -0.90, 0.33, -0.55, 0.55
+#movie: movie040,    -0.84, 0.75, -0.37, 1.00
+#movie: movie047,     0.10, 1.40,  0.48, 1.65
+#movie: movie049,    -0.51, 1.35, -0.07, 1.60
+#movie: movie050,     0.17, 1.20,  0.52, 1.37
+#movie: movie051,    -0.90, 1.35, -0.63, 1.85

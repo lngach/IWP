@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gumi Wall</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+<style type="text/css">
+<!--
+html, body{
+  width: 100%;
+  height: 100%;
+//  cursor: none;
+}
+a{
+//  cursor: none;
+  color: #fff;
+// opacity: 0;
+}
+a:not([href]):not([tabindex]) {
+  color: #fff;
+}
+.container{
+  position: relative;
+  text-align: left;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.movie_container{
+  position: absolute;
+}
+.movie_container.movie000{
+  top: 1px;
+  left: 0px;
+  width: 1280px;
+  height: 730px;
+}
+.movie_container.movie001{
+  top: -3px;
+  left: -2px;
+  width: 320px;
+  height: 180px;
+}
+.movie_container.movie008{
+  top: -8px;
+  left: -1px;
+  width: 1280px;
+  height: 730px;
+}
+.movie_container.movie010{
+  top: -1px;
+  left: -9px;
+  width: 1293px;
+  height: 727px;
+}
+.movie_container.movie020{
+  top: 437px;
+  left: 0px;
+  width: 320px;
+  height: 180px;
+}
+.movie_container.movie025{
+  top: 260px;
+  left: 680px;
+  width: 320px;
+  height: 180px;
+}
+.movie_container.movie026{
+  top: 233px;
+  left: 640px;
+  width: 640px;
+  height: 360px;
+}
+.movie_container.movie027{
+  top: 162px;
+  left: 421px;
+  width: 320px;
+  height: 180px;
+}
+.movie_container.movie034{
+  top: 16px;
+  left: 249px;
+  width: 911px;
+  height: 533px;
+}
+.movie_container.movie035{
+  top: 360px;
+  left: 520px;
+  width: 320px;
+  height: 187px;
+}
+.movie_container.movie037{
+  top: 0px;
+  left: 847px;
+  width: 320px;
+  height: 180px;
+}
+.movie_container.movie040{
+  top: 115px;
+  left: 602px;
+  width: 640px;
+  height: 360px;
+}
+.movie_container.movie047{
+  top: 444px;
+  left: 286px;
+  width: 327px;
+  height: 183px;
+}
+.movie_container.movie049{
+  top: 447px;
+  left: 630px;
+  width: 320px;
+  height: 193px;
+}
+.movie_container.movie050{
+  top: 300px;
+  left: 260px;
+  width: 320px;
+  height: 180px;
+}
+.movie_container.movie051{
+  top: 488px;
+  left: 929px;
+  width: 320px;
+  height: 180px;
+}
+
+.movie_video{
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+.movie_controls{
+  opacity: 1;
+  position: absolute;
+}
+-->
+</style>
+  </head>
+  <body style="background: #000;">
+    <div class="container">
+      <div class="movie_container movie000"><video id="movie000" class="movie_video" src="./movie/000.webm" preload></video></div>
+      <div class="movie_container movie001"><video id="movie001" class="movie_video" src="./movie/001.webm" preload></video></div>
+      <div class="movie_container movie008"><video id="movie008" class="movie_video" src="./movie/008_1080.webm" preload></video></div>
+      <div class="movie_container movie010"><video id="movie010" class="movie_video" src="./movie/010_1080.webm" preload></video></div>
+      <div class="movie_container movie020"><video id="movie020" class="movie_video" src="./movie/020.webm" preload></video></div>
+      <div class="movie_container movie025"><video id="movie025" class="movie_video" src="./movie/025.webm" preload></video></div>
+      <div class="movie_container movie026"><video id="movie026" class="movie_video" src="./movie/026_960.webm" preload></video></div>
+      <div class="movie_container movie027"><video id="movie027" class="movie_video" src="./movie/027.webm" preload></video></div>
+      <div class="movie_container movie034"><video id="movie034" class="movie_video" src="./movie/034_960.webm" preload></video></div>
+      <div class="movie_container movie035"><video id="movie035" class="movie_video" src="./movie/035.webm" preload></video></div>
+      <div class="movie_container movie037"><video id="movie037" class="movie_video" src="./movie/037.webm" preload></video></div>
+      <div class="movie_container movie040"><video id="movie040" class="movie_video" src="./movie/040_960.webm" preload></video></div>
+      <div class="movie_container movie047"><video id="movie047" class="movie_video" src="./movie/047.webm" preload></video></div>
+      <div class="movie_container movie049"><video id="movie049" class="movie_video" src="./movie/049.webm" preload></video></div>
+      <div class="movie_container movie050"><video id="movie050" class="movie_video" src="./movie/050.webm" preload></video></div>
+      <div class="movie_container movie051"><video id="movie051" class="movie_video" src="./movie/051.webm" preload></video></div>
+
+      <div class="movie_controls">
+        <div id="movie000_status" data_is_play="false"></div>
+        <div id="movie001_status" data_is_play="false"></div>
+        <div id="movie008_status" data_is_play="false"></div>
+        <div id="movie010_status" data_is_play="false"></div>
+        <div id="movie020_status" data_is_play="false"></div>
+        <div id="movie025_status" data_is_play="false"></div>
+        <div id="movie026_status" data_is_play="false"></div>
+        <div id="movie027_status" data_is_play="false"></div>
+        <div id="movie034_status" data_is_play="false"></div>
+        <div id="movie035_status" data_is_play="false"></div>
+        <div id="movie037_status" data_is_play="false"></div>
+        <div id="movie040_status" data_is_play="false"></div>
+        <div id="movie047_status" data_is_play="false"></div>
+        <div id="movie049_status" data_is_play="false"></div>
+        <div id="movie050_status" data_is_play="false"></div>
+        <div id="movie051_status" data_is_play="false"></div>
+
+        <a id="movie000_play">Play Movie 000</a><br />
+        <a id="movie001_play">Play Movie 001</a><br />
+        <a id="movie008_play">Play Movie 008</a><br />
+        <a id="movie010_play">Play Movie 010</a><br />
+        <a id="movie020_play">Play Movie 020</a><br />
+        <a id="movie025_play">Play Movie 025</a><br />
+        <a id="movie026_play">Play Movie 026</a><br />
+        <a id="movie027_play">Play Movie 027</a><br />
+        <a id="movie034_play">Play Movie 034</a><br />
+        <a id="movie035_play">Play Movie 035</a><br />
+        <a id="movie037_play">Play Movie 037</a><br />
+        <a id="movie040_play">Play Movie 040</a><br />
+        <a id="movie047_play">Play Movie 047</a><br />
+        <a id="movie049_play">Play Movie 049</a><br />
+        <a id="movie050_play">Play Movie 050</a><br />
+        <a id="movie051_play">Play Movie 051</a><br />
+
+        <a id="movie000_stop">Stop Movie 000</a><br />
+        <a id="movie001_stop">Stop Movie 001</a><br />
+        <a id="movie008_stop">Stop Movie 008</a><br />
+        <a id="movie010_stop">Stop Movie 010</a><br />
+        <a id="movie020_stop">Stop Movie 020</a><br />
+        <a id="movie025_stop">Stop Movie 025</a><br />
+        <a id="movie026_stop">Stop Movie 026</a><br />
+        <a id="movie027_stop">Stop Movie 027</a><br />
+        <a id="movie034_stop">Stop Movie 034</a><br />
+        <a id="movie035_stop">Stop Movie 035</a><br />
+        <a id="movie037_stop">Stop Movie 037</a><br />
+        <a id="movie040_stop">Stop Movie 040</a><br />
+        <a id="movie047_stop">Stop Movie 047</a><br />
+        <a id="movie049_stop">Stop Movie 049</a><br />
+        <a id="movie050_stop">Stop Movie 050</a><br />
+        <a id="movie051_stop">Stop Movie 051</a><br />
+
+        <a id="movie000_pause">Pause Movie 000</a><br />
+        <a id="movie001_pause">Pause Movie 001</a><br />
+        <a id="movie008_pause">Pause Movie 008</a><br />
+        <a id="movie010_pause">Pause Movie 010</a><br />
+        <a id="movie020_pause">Pause Movie 020</a><br />
+        <a id="movie025_pause">Pause Movie 025</a><br />
+        <a id="movie026_pause">Pause Movie 026</a><br />
+        <a id="movie027_pause">Pause Movie 027</a><br />
+        <a id="movie034_pause">Pause Movie 034</a><br />
+        <a id="movie035_pause">Pause Movie 035</a><br />
+        <a id="movie037_pause">Pause Movie 037</a><br />
+        <a id="movie040_pause">Pause Movie 040</a><br />
+        <a id="movie047_pause">Pause Movie 047</a><br />
+        <a id="movie049_pause">Pause Movie 049</a><br />
+        <a id="movie050_pause">Pause Movie 050</a><br />
+        <a id="movie051_pause">Pause Movie 051</a><br />
+
+        <a id="check_status">Check Status</a><br />
+      </div>
+    </div>
+    <script type="text/javascript">
+    <!--
+    var isCanPlay000 = false;
+    var isCanPlay001 = false;
+    var isCanPlay008 = false;
+    var isCanPlay010 = false;
+    var isCanPlay020 = false;
+    var isCanPlay025 = false;
+    var isCanPlay026 = false;
+    var isCanPlay027 = false;
+    var isCanPlay034 = false;
+    var isCanPlay035 = false;
+    var isCanPlay037 = false;
+    var isCanPlay040 = false;
+    var isCanPlay047 = false;
+    var isCanPlay049 = false;
+    var isCanPlay050 = false;
+    var isCanPlay051 = false;
+
+    var v000 = document.getElementById("movie000");
+    var v001 = document.getElementById("movie001");
+    var v008 = document.getElementById("movie008");
+    var v010 = document.getElementById("movie010");
+    var v020 = document.getElementById("movie020");
+    var v025 = document.getElementById("movie025");
+    var v026 = document.getElementById("movie026");
+    var v027 = document.getElementById("movie027");
+    var v034 = document.getElementById("movie034");
+    var v035 = document.getElementById("movie035");
+    var v037 = document.getElementById("movie037");
+    var v040 = document.getElementById("movie040");
+    var v047 = document.getElementById("movie047");
+    var v049 = document.getElementById("movie049");
+    var v050 = document.getElementById("movie050");
+    var v051 = document.getElementById("movie051");
+
+    v000.addEventListener("canplay", function(){
+      isCanPlay000 = true;
+    });
+    v000.addEventListener("play", function(){
+      $("#movie000_status").attr("data_is_play", "true");
+      $("#movie000").show();
+    });
+    v000.addEventListener("pause", function(){
+      $("#movie000_status").attr("data_is_play", "false");
+      $("#movie000").hide();
+    });
+    v000.addEventListener("ended", function(){
+      v000.currentTime = 0;
+      $("#movie000_status").attr("data_is_play", "false");
+      $("#movie000").hide();
+    });
+
+    v001.addEventListener("canplay", function(){
+      isCanPlay001 = true;
+    });
+    v001.addEventListener("play", function(){
+      $("#movie001_status").attr("data_is_play", "true");
+      $("#movie001").show();
+    });
+    v001.addEventListener("pause", function(){
+      $("#movie001_status").attr("data_is_play", "false");
+      $("#movie001").hide();
+    });
+    v001.addEventListener("ended", function(){
+      v001.currentTime = 0;
+      $("#movie001_status").attr("data_is_play", "false");
+      $("#movie001").hide();
+    });
+
+    v008.addEventListener("canplay", function(){
+      isCanPlay008 = true;
+    });
+    v008.addEventListener("play", function(){
+      $("#movie008_status").attr("data_is_play", "true");
+      $("#movie008").show();
+    });
+    v008.addEventListener("pause", function(){
+      $("#movie008_status").attr("data_is_play", "false");
+      $("#movie008").hide();
+    });
+    v008.addEventListener("ended", function(){
+      v008.currentTime = 0;
+      $("#movie008_status").attr("data_is_play", "false");
+      $("#movie008").hide();
+    });
+
+    v010.addEventListener("canplay", function(){
+      isCanPlay010 = true;
+    });
+    v010.addEventListener("play", function(){
+      $("#movie010_status").attr("data_is_play", "true");
+      $("#movie010").show();
+    });
+    v010.addEventListener("pause", function(){
+      $("#movie010_status").attr("data_is_play", "false");
+      $("#movie010").hide();
+    });
+    v010.addEventListener("ended", function(){
+      v010.currentTime = 0;
+      $("#movie010_status").attr("data_is_play", "false");
+      $("#movie010").hide();
+    });
+
+    v020.addEventListener("canplay", function(){
+      isCanPlay020 = true;
+    });
+    v020.addEventListener("play", function(){
+      $("#movie020_status").attr("data_is_play", "true");
+      $("#movie020").show();
+    });
+    v020.addEventListener("pause", function(){
+      $("#movie020_status").attr("data_is_play", "false");
+      $("#movie020").hide();
+    });
+    v020.addEventListener("ended", function(){
+      v020.currentTime = 0;
+      $("#movie020_status").attr("data_is_play", "false");
+      $("#movie020").hide();
+    });
+
+    v025.addEventListener("canplay", function(){
+      isCanPlay025 = true;
+    });
+    v025.addEventListener("play", function(){
+      $("#movie025_status").attr("data_is_play", "true");
+      $("#movie025").show();
+    });
+    v025.addEventListener("pause", function(){
+      $("#movie025_status").attr("data_is_play", "false");
+      $("#movie025").hide();
+    });
+    v025.addEventListener("ended", function(){
+      v025.currentTime = 0;
+      $("#movie025_status").attr("data_is_play", "false");
+      $("#movie025").hide();
+    });
+
+
+    v026.addEventListener("canplay", function(){
+      isCanPlay026 = true;
+    });
+    v026.addEventListener("play", function(){
+      $("#movie026_status").attr("data_is_play", "true");
+      $("#movie026").show();
+    });
+    v026.addEventListener("pause", function(){
+      $("#movie026_status").attr("data_is_play", "false");
+      $("#movie026").hide();
+    });
+    v026.addEventListener("ended", function(){
+      v026.currentTime = 0;
+      $("#movie026_status").attr("data_is_play", "false");
+      $("#movie026").hide();
+    });
+
+    v027.addEventListener("canplay", function(){
+      isCanPlay027 = true;
+    });
+    v027.addEventListener("play", function(){
+      $("#movie027_status").attr("data_is_play", "true");
+      $("#movie027").show();
+    });
+    v027.addEventListener("pause", function(){
+      $("#movie027_status").attr("data_is_play", "false");
+      $("#movie027").hide();
+    });
+    v027.addEventListener("ended", function(){
+      v027.currentTime = 0;
+      $("#movie027_status").attr("data_is_play", "false");
+      $("#movie027").hide();
+    });
+
+    v034.addEventListener("canplay", function(){
+      isCanPlay034 = true;
+    });
+    v034.addEventListener("play", function(){
+      $("#movie034_status").attr("data_is_play", "true");
+      $("#movie034").show();
+    });
+    v034.addEventListener("pause", function(){
+      $("#movie034_status").attr("data_is_play", "false");
+      $("#movie034").hide();
+    });
+    v034.addEventListener("ended", function(){
+      v034.currentTime = 0;
+      $("#movie034_status").attr("data_is_play", "false");
+      $("#movie034").hide();
+    });
+
+    v035.addEventListener("canplay", function(){
+      isCanPlay035 = true;
+    });
+    v035.addEventListener("play", function(){
+      $("#movie035_status").attr("data_is_play", "true");
+      $("#movie035").show();
+    });
+    v035.addEventListener("pause", function(){
+      $("#movie035_status").attr("data_is_play", "false");
+      $("#movie035").hide();
+    });
+    v035.addEventListener("ended", function(){
+      v035.currentTime = 0;
+      $("#movie035_status").attr("data_is_play", "false");
+      $("#movie035").hide();
+    });
+
+    v037.addEventListener("canplay", function(){
+      isCanPlay037 = true;
+    });
+    v037.addEventListener("play", function(){
+      $("#movie037_status").attr("data_is_play", "true");
+      $("#movie037").show();
+    });
+    v037.addEventListener("pause", function(){
+      $("#movie037_status").attr("data_is_play", "false");
+      $("#movie037").hide();
+    });
+    v037.addEventListener("ended", function(){
+      v037.currentTime = 0;
+      $("#movie037_status").attr("data_is_play", "false");
+      $("#movie037").hide();
+    });
+
+    v040.addEventListener("canplay", function(){
+      isCanPlay040 = true;
+    });
+    v040.addEventListener("play", function(){
+      $("#movie040_status").attr("data_is_play", "true");
+      $("#movie040").show();
+    });
+    v040.addEventListener("pause", function(){
+      $("#movie040_status").attr("data_is_play", "false");
+      $("#movie040").hide();
+    });
+    v040.addEventListener("ended", function(){
+      v040.currentTime = 0;
+      $("#movie040_status").attr("data_is_play", "false");
+      $("#movie040").hide();
+    });
+
+    v047.addEventListener("canplay", function(){
+      isCanPlay047 = true;
+    });
+    v047.addEventListener("play", function(){
+      $("#movie047_status").attr("data_is_play", "true");
+      $("#movie047").show();
+    });
+    v047.addEventListener("pause", function(){
+      $("#movie047_status").attr("data_is_play", "false");
+      $("#movie047").hide();
+    });
+    v047.addEventListener("ended", function(){
+      v047.currentTime = 0;
+      $("#movie047_status").attr("data_is_play", "false");
+      $("#movie047").hide();
+    });
+
+    v049.addEventListener("canplay", function(){
+      isCanPlay049 = true;
+    });
+    v049.addEventListener("play", function(){
+      $("#movie049_status").attr("data_is_play", "true");
+      $("#movie049").show();
+    });
+    v049.addEventListener("pause", function(){
+      $("#movie049_status").attr("data_is_play", "false");
+      $("#movie049").hide();
+    });
+    v049.addEventListener("ended", function(){
+      v049.currentTime = 0;
+      $("#movie049_status").attr("data_is_play", "false");
+      $("#movie049").hide();
+    });
+
+    v050.addEventListener("canplay", function(){
+      isCanPlay050 = true;
+    });
+    v050.addEventListener("play", function(){
+      $("#movie050_status").attr("data_is_play", "true");
+      $("#movie050").show();
+    });
+    v050.addEventListener("pause", function(){
+      $("#movie050_status").attr("data_is_play", "false");
+      $("#movie050").hide();
+    });
+    v050.addEventListener("ended", function(){
+      v050.currentTime = 0;
+      $("#movie050_status").attr("data_is_play", "false");
+      $("#movie050").hide();
+    });
+
+    v051.addEventListener("canplay", function(){
+      isCanPlay051 = true;
+    });
+    v051.addEventListener("play", function(){
+      $("#movie051_status").attr("data_is_play", "true");
+      $("#movie051").show();
+    });
+    v051.addEventListener("pause", function(){
+      $("#movie051_status").attr("data_is_play", "false");
+      $("#movie051").hide();
+    });
+    v051.addEventListener("ended", function(){
+      v051.currentTime = 0;
+      $("#movie051_status").attr("data_is_play", "false");
+      $("#movie051").hide();
+    });
+
+
+    $(function(){
+        $("#movie000_play").click(function(e){
+          e.preventDefault();
+          if( isCanPlay000 ){
+            v000.play();
+          }
+        });
+        $("#movie000_stop").click(function(e){
+          e.preventDefault();
+          if( isCanPlay000 ){
+            v000.pause();
+            v000.currentTime = 0;
+          }
+        });
+        $("#movie000_pause").click(function(e){
+          e.preventDefault();
+          if( isCanPlay000 ){
+            v000.pause();
+          }
+        });
+
+
+        $("#movie001_play").click(function(e){
+          e.preventDefault();
+          if( isCanPlay001 ){
+            v001.play();
+          }
+        });
+        $("#movie001_stop").click(function(e){
+          e.preventDefault();
+          if( isCanPlay001 ){
+            v001.pause();
+            v001.currentTime = 0;
+          }
+        });
+        $("#movie001_pause").click(function(e){
+          e.preventDefault();
+          if( isCanPlay001 ){
+            v001.pause();
+          }
+        });
+
+
+        $("#movie008_play").click(function(e){
+          e.preventDefault();
+          if( isCanPlay008 ){
+            v008.play();
+          }
+        });
+        $("#movie008_stop").click(function(e){
+          e.preventDefault();
+          if( isCanPlay008 ){
+            v008.pause();
+            v008.currentTime = 0;
+          }
+        });
+        $("#movie008_pause").click(function(e){
+          e.preventDefault();
+          if( isCanPlay008 ){
+            v008.pause();
+          }
+        });
+
+        $("#movie010_play").click(function(e){
+          e.preventDefault();
+          if( isCanPlay010 ){
+            v010.play();
+          }
+        });
+        $("#movie010_stop").click(function(e){
+          e.preventDefault();
+          if( isCanPlay010 ){
+            v010.pause();
+            v010.currentTime = 0;
+          }
+        });
+        $("#movie010_pause").click(function(e){
+          e.preventDefault();
+          if( isCanPlay010 ){
+            v010.pause();
+          }
+        });
+
+        $("#movie020_play").click(function(e){
+          e.preventDefault();
+          if( isCanPlay020 ){
+            v020.play();
+          }
+        });
+        $("#movie020_stop").click(function(e){
+          e.preventDefault();
+          if( isCanPlay020 ){
+            v020.pause();
+            v020.currentTime = 0;
+          }
+        });
+        $("#movie020_pause").click(function(e){
+          e.preventDefault();
+          if( isCanPlay020 ){
+            v020.pause();
+          }
+        });
+
+        $("#movie025_play").click(function(e){
+          e.preventDefault();
+          if( isCanPlay025 ){
+            v025.play();
+          }
+        });
+        $("#movie025_stop").click(function(e){
+          e.preventDefault();
+          if( isCanPlay025 ){
+            v025.pause();
+            v025.currentTime = 0;
+          }
+        });
+        $("#movie025_pause").click(function(e){
+          e.preventDefault();
+          if( isCanPlay025 ){
+            v025.pause();
+          }
+        });
+
+        $("#movie026_play").click(function(e){
+          e.preventDefault();
+          if( isCanPlay026 ){
+            v026.play();
+          }
+        });
+        $("#movie026_stop").click(function(e){
+          e.preventDefault();
+          if( isCanPlay026 ){
+            v026.pause();
+            v026.currentTime = 0;
+          }
+        });
+        $("#movie026_pause").click(function(e){
+          e.preventDefault();
+          if( isCanPlay026 ){
+            v026.pause();
+          }
+        });
+
+        $("#movie027_play").click(function(e){
+          e.preventDefault();
+          if( isCanPlay027 ){
+            v027.play();
+          }
+        });
+        $("#movie027_stop").click(function(e){
+          e.preventDefault();
+          if( isCanPlay027 ){
+            v027.pause();
+            v027.currentTime = 0;
+          }
+        });
+        $("#movie027_pause").click(function(e){
+          e.preventDefault();
+          if( isCanPlay027 ){
+            v027.pause();
+          }
+        });
+
+        $("#movie034_play").click(function(e){
+          e.preventDefault();
+          if( isCanPlay034 ){
+            v034.play();
+          }
+        });
+        $("#movie034_stop").click(function(e){
+          e.preventDefault();
+          if( isCanPlay034 ){
+            v034.pause();
+            v034.currentTime = 0;
+          }
+        });
+        $("#movie034_pause").click(function(e){
+          e.preventDefault();
+          if( isCanPlay034 ){
+            v034.pause();
+          }
+        });
+
+        $("#movie035_play").click(function(e){
+          e.preventDefault();
+          if( isCanPlay035 ){
+            v035.play();
+          }
+        });
+        $("#movie035_stop").click(function(e){
+          e.preventDefault();
+          if( isCanPlay035 ){
+            v035.pause();
+            v035.currentTime = 0;
+          }
+        });
+        $("#movie035_pause").click(function(e){
+          e.preventDefault();
+          if( isCanPlay035 ){
+            v035.pause();
+          }
+        });
+
+
+        $("#movie037_play").click(function(e){
+          e.preventDefault();
+          if( isCanPlay037 ){
+            v037.play();
+          }
+        });
+        $("#movie037_stop").click(function(e){
+          e.preventDefault();
+          if( isCanPlay037 ){
+            v037.pause();
+            v037.currentTime = 0;
+          }
+        });
+        $("#movie037_pause").click(function(e){
+          e.preventDefault();
+          if( isCanPlay037 ){
+            v037.pause();
+          }
+        });
+
+        $("#movie040_play").click(function(e){
+          e.preventDefault();
+          if( isCanPlay040 ){
+            v040.play();
+          }
+        });
+        $("#movie040_stop").click(function(e){
+          e.preventDefault();
+          if( isCanPlay040 ){
+            v040.pause();
+            v040.currentTime = 0;
+          }
+        });
+        $("#movie040_pause").click(function(e){
+          e.preventDefault();
+          if( isCanPlay040 ){
+            v040.pause();
+          }
+        });
+
+        $("#movie047_play").click(function(e){
+          e.preventDefault();
+          if( isCanPlay047 ){
+            v047.play();
+          }
+        });
+        $("#movie047_stop").click(function(e){
+          e.preventDefault();
+          if( isCanPlay047 ){
+            v047.pause();
+            v047.currentTime = 0;
+          }
+        });
+        $("#movie047_pause").click(function(e){
+          e.preventDefault();
+          if( isCanPlay047 ){
+            v047.pause();
+          }
+        });
+
+        $("#movie049_play").click(function(e){
+          e.preventDefault();
+          if( isCanPlay049 ){
+            v049.play();
+          }
+        });
+        $("#movie049_stop").click(function(e){
+          e.preventDefault();
+          if( isCanPlay049 ){
+            v049.pause();
+            v049.currentTime = 0;
+          }
+        });
+        $("#movie049_pause").click(function(e){
+          e.preventDefault();
+          if( isCanPlay049 ){
+            v049.pause();
+          }
+        });
+
+        $("#movie050_play").click(function(e){
+          e.preventDefault();
+          if( isCanPlay050 ){
+            v050.play();
+          }
+        });
+        $("#movie050_stop").click(function(e){
+          e.preventDefault();
+          if( isCanPlay050 ){
+            v050.pause();
+            v050.currentTime = 0;
+          }
+        });
+        $("#movie050_pause").click(function(e){
+          e.preventDefault();
+          if( isCanPlay050 ){
+            v050.pause();
+          }
+        });
+
+        $("#movie051_play").click(function(e){
+          e.preventDefault();
+          if( isCanPlay051 ){
+            v051.play();
+          }
+        });
+        $("#movie051_stop").click(function(e){
+          e.preventDefault();
+          if( isCanPlay051 ){
+            v051.pause();
+            v051.currentTime = 0;
+          }
+        });
+        $("#movie051_pause").click(function(e){
+          e.preventDefault();
+          if( isCanPlay051 ){
+            v051.pause();
+          }
+        });
+
+    $("#check_status").click(function(e){
+          e.preventDefault();
+          console.log( "movie000 >> " + isCanPlay000 + " -- " + $("#movie000_status").attr("data_is_play"));
+          console.log( "movie001 >> " + isCanPlay001 + " -- " + $("#movie001_status").attr("data_is_play"));
+          console.log( "movie008 >> " + isCanPlay008 + " -- " + $("#movie008_status").attr("data_is_play"));
+          console.log( "movie010 >> " + isCanPlay010 + " -- " + $("#movie010_status").attr("data_is_play"));
+          console.log( "movie020 >> " + isCanPlay020 + " -- " + $("#movie020_status").attr("data_is_play"));
+          console.log( "movie025 >> " + isCanPlay025 + " -- " + $("#movie025_status").attr("data_is_play"));
+          console.log( "movie026 >> " + isCanPlay026 + " -- " + $("#movie026_status").attr("data_is_play"));
+          console.log( "movie027 >> " + isCanPlay027 + " -- " + $("#movie027_status").attr("data_is_play"));
+          console.log( "movie034 >> " + isCanPlay034 + " -- " + $("#movie034_status").attr("data_is_play"));
+          console.log( "movie035 >> " + isCanPlay035 + " -- " + $("#movie035_status").attr("data_is_play"));
+          console.log( "movie037 >> " + isCanPlay037 + " -- " + $("#movie037_status").attr("data_is_play"));
+          console.log( "movie040 >> " + isCanPlay040 + " -- " + $("#movie040_status").attr("data_is_play"));
+          console.log( "movie047 >> " + isCanPlay047 + " -- " + $("#movie047_status").attr("data_is_play"));
+          console.log( "movie049 >> " + isCanPlay049 + " -- " + $("#movie049_status").attr("data_is_play"));
+          console.log( "movie050 >> " + isCanPlay050 + " -- " + $("#movie050_status").attr("data_is_play"));
+          console.log( "movie051 >> " + isCanPlay051 + " -- " + $("#movie051_status").attr("data_is_play"));
+    });
+
+        var time000 = -1;
+        var time001 = -1;
+        var time008 = -1;
+        var time010 = -1;
+        var time020 = -1;
+        var time025 = -1;
+        var time026 = -1;
+        var time027 = -1;
+        var time034 = -1;
+        var time035 = -1;
+        var time037 = -1;
+        var time040 = -1;
+        var time047 = -1;
+        var time049 = -1;
+        var time050 = -1;
+        var time051 = -1;
+
+        var movieCheck = function(){
+          if( $("#movie000_status").attr("data_is_play") == "true" ){
+            if( time000 == v000.currentTime ){
+              v000.pause();
+              v000.currentTime = 0;
+            }
+            time000 = v000.currentTime;
+          }else{
+            time000 = -1;
+          }
+
+          if( $("#movie001_status").attr("data_is_play") == "true" ){
+            if( time001 == v001.currentTime ){
+              v001.pause();
+              v001.currentTime = 0;
+            }
+            time001 = v001.currentTime;
+          }else{
+            time001 = -1;
+          }
+
+          if( $("#movie008_status").attr("data_is_play") == "true" ){
+            if( time008 == v008.currentTime ){
+              v008.pause();
+              v008.currentTime = 0;
+            }
+            time008 = v008.currentTime;
+          }else{
+            time008 = -1;
+          }
+
+          if( $("#movie010_status").attr("data_is_play") == "true" ){
+            if( time010 == v010.currentTime ){
+              v010.pause();
+              v010.currentTime = 0;
+            }
+            time010 = v010.currentTime;
+          }else{
+            time010 = -1;
+          }
+
+          if( $("#movie020_status").attr("data_is_play") == "true" ){
+            if( time020 == v020.currentTime ){
+              v020.pause();
+              v020.currentTime = 0;
+            }
+            time020 = v020.currentTime;
+          }else{
+            time020 = -1;
+          }
+
+          if( $("#movie025_status").attr("data_is_play") == "true" ){
+            if( time025 == v025.currentTime ){
+              v025.pause();
+              v025.currentTime = 0;
+            }
+            time025 = v025.currentTime;
+          }else{
+            time025 = -1;
+          }
+
+          if( $("#movie026_status").attr("data_is_play") == "true" ){
+            if( time026 == v026.currentTime ){
+              v026.pause();
+              v026.currentTime = 0;
+            }
+            time026 = v026.currentTime;
+          }else{
+            time026 = -1;
+          }
+
+          if( $("#movie027_status").attr("data_is_play") == "true" ){
+            if( time027 == v027.currentTime ){
+              v027.pause();
+              v027.currentTime = 0;
+            }
+            time027 = v027.currentTime;
+          }else{
+            time027 = -1;
+          }
+
+          if( $("#movie034_status").attr("data_is_play") == "true" ){
+            if( time034 == v034.currentTime ){
+              v034.pause();
+              v034.currentTime = 0;
+            }
+            time034 = v034.currentTime;
+          }else{
+            time034 = -1;
+          }
+
+          if( $("#movie035_status").attr("data_is_play") == "true" ){
+            if( time035 == v035.currentTime ){
+              v035.pause();
+              v035.currentTime = 0;
+            }
+            time035 = v035.currentTime;
+          }else{
+            time035 = -1;
+          }
+
+          if( $("#movie037_status").attr("data_is_play") == "true" ){
+            if( time037 == v037.currentTime ){
+              v037.pause();
+              v037.currentTime = 0;
+            }
+            time037 = v037.currentTime;
+          }else{
+            time037 = -1;
+          }
+
+          if( $("#movie040_status").attr("data_is_play") == "true" ){
+            if( time040 == v040.currentTime ){
+              v040.pause();
+              v040.currentTime = 0;
+            }
+            time040 = v040.currentTime;
+          }else{
+            time040 = -1;
+          }
+
+          if( $("#movie047_status").attr("data_is_play") == "true" ){
+            if( time047 == v047.currentTime ){
+              v047.pause();
+              v047.currentTime = 0;
+            }
+            time047 = v047.currentTime;
+          }else{
+            time047 = -1;
+          }
+
+          if( $("#movie049_status").attr("data_is_play") == "true" ){
+            if( time049 == v049.currentTime ){
+              v049.pause();
+              v049.currentTime = 0;
+            }
+            time049 = v049.currentTime;
+          }else{
+            time049 = -1;
+          }
+
+          if( $("#movie050_status").attr("data_is_play") == "true" ){
+            if( time050 == v050.currentTime ){
+              v050.pause();
+              v050.currentTime = 0;
+            }
+            time050 = v050.currentTime;
+          }else{
+            time050 = -1;
+          }
+
+          if( $("#movie051_status").attr("data_is_play") == "true" ){
+            if( time051 == v051.currentTime ){
+              v051.pause();
+              v051.currentTime = 0;
+            }
+            time051 = v051.currentTime;
+          }else{
+            time051 = -1;
+          }
+
+          setTimeout(movieCheck, 5000);
+        };
+        setTimeout(movieCheck, 5000);
+
+    });
+    -->
+    </script>
+  </body>
+</html>
