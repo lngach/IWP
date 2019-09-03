@@ -18,11 +18,6 @@ html, body{
 }
 a{
   cursor: none;
-  color: #fff;
-  opacity: 0;
-}
-a:not([href]):not([tabindex]) {
-  color: #fff;
 }
 .container{
   position: relative;
@@ -36,100 +31,100 @@ a:not([href]):not([tabindex]) {
   position: absolute;
 }
 .movie_container.movie000{
-  top: 1px;
+  top: 2px;
   left: 0px;
-  width: 1280px;
-  height: 730px;
+  width: 1920px;
+  height: 1095px;
 }
 .movie_container.movie001{
-  top: -3px;
-  left: -2px;
-  width: 320px;
-  height: 180px;
+  top: -5px;
+  left: -3px;
+  width: 480px;
+  height: 270px;
 }
 .movie_container.movie008{
-  top: -8px;
-  left: -1px;
-  width: 1280px;
-  height: 730px;
+  top: -12px;
+  left: -2px;
+  width: 1920px;
+  height: 1095px;
 }
 .movie_container.movie010{
-  top: -1px;
-  left: -9px;
-  width: 1293px;
-  height: 727px;
+  top: -2px;
+  left: -14px;
+  width: 1940px;
+  height: 1090px;
 }
 .movie_container.movie020{
-  top: 437px;
+  top: 655px;
   left: 0px;
-  width: 320px;
-  height: 180px;
+  width: 480px;
+  height: 270px;
 }
 .movie_container.movie025{
-  top: 260px;
-  left: 680px;
-  width: 320px;
-  height: 180px;
+  top: 390px;
+  left: 1020px;
+  width: 480px;
+  height: 270px;
 }
 .movie_container.movie026{
-  top: 233px;
-  left: 640px;
-  width: 640px;
-  height: 360px;
+  top: 350px;
+  left: 960px;
+  width: 960px;
+  height: 540px;
 }
 .movie_container.movie027{
-  top: 162px;
-  left: 421px;
-  width: 320px;
-  height: 180px;
+  top: 243px;
+  left: 631px;
+  width: 480px;
+  height: 270px;
 }
 .movie_container.movie034{
-  top: 16px;
-  left: 249px;
-  width: 911px;
-  height: 533px;
+  top: 24px;
+  left: 373px;
+  width: 1366px;
+  height: 800px;
 }
 .movie_container.movie035{
-  top: 360px;
-  left: 520px;
-  width: 320px;
-  height: 187px;
+  top: 540px;
+  left: 780px;
+  width: 480px;
+  height: 280px;
 }
 .movie_container.movie037{
   top: 0px;
-  left: 847px;
-  width: 320px;
-  height: 180px;
+  left: 1270px;
+  width: 480px;
+  height: 270px;
 }
 .movie_container.movie040{
-  top: 115px;
-  left: 602px;
-  width: 640px;
-  height: 360px;
+  top: 173px;
+  left: 903px;
+  width: 960px;
+  height: 540px;
 }
 .movie_container.movie047{
-  top: 444px;
-  left: 286px;
-  width: 327px;
-  height: 183px;
+  top: 666px;
+  left: 429px;
+  width: 490px;
+  height: 274px;
 }
 .movie_container.movie049{
-  top: 447px;
-  left: 630px;
-  width: 320px;
-  height: 193px;
+  top: 670px;
+  left: 945px;
+  width: 480px;
+  height: 290px;
 }
 .movie_container.movie050{
-  top: 300px;
-  left: 260px;
-  width: 320px;
-  height: 180px;
+  top: 450px;
+  left: 390px;
+  width: 480px;
+  height: 270px;
 }
 .movie_container.movie051{
-  top: 488px;
-  left: 929px;
-  width: 320px;
-  height: 180px;
+  top: 732px;
+  left: 1394px;
+  width: 480px;
+  height: 270px;
 }
 
 .movie_video{
@@ -141,6 +136,10 @@ a:not([href]):not([tabindex]) {
   opacity: 1;
   position: absolute;
 }
+.movie_controls div{
+  opacity: 0;
+}
+-->
 </style>
   </head>
   <body style="background: #000;">
@@ -180,61 +179,62 @@ a:not([href]):not([tabindex]) {
         <div id="movie050_status" data_is_play="false"></div>
         <div id="movie051_status" data_is_play="false"></div>
 
-        <a id="movie000_play">Play Movie 000</a><br />
-        <a id="movie001_play">Play Movie 001</a><br />
-        <a id="movie008_play">Play Movie 008</a><br />
-        <a id="movie010_play">Play Movie 010</a><br />
-        <a id="movie020_play">Play Movie 020</a><br />
-        <a id="movie025_play">Play Movie 025</a><br />
-        <a id="movie026_play">Play Movie 026</a><br />
-        <a id="movie027_play">Play Movie 027</a><br />
-        <a id="movie034_play">Play Movie 034</a><br />
-        <a id="movie035_play">Play Movie 035</a><br />
-        <a id="movie037_play">Play Movie 037</a><br />
-        <a id="movie040_play">Play Movie 040</a><br />
-        <a id="movie047_play">Play Movie 047</a><br />
-        <a id="movie049_play">Play Movie 049</a><br />
-        <a id="movie050_play">Play Movie 050</a><br />
-        <a id="movie051_play">Play Movie 051</a><br />
+        <div id="movie000_play">Play Movie 000</div><br />
+        <div id="movie001_play">Play Movie 001</div><br />
+        <div id="movie008_play">Play Movie 008</div><br />
+        <div id="movie010_play">Play Movie 010</div><br />
+        <div id="movie020_play">Play Movie 020</div><br />
+        <div id="movie025_play">Play Movie 025</div><br />
+        <div id="movie026_play">Play Movie 026</div><br />
+        <div id="movie027_play">Play Movie 027</div><br />
+        <div id="movie034_play">Play Movie 034</div><br />
+        <div id="movie035_play">Play Movie 035</div><br />
+        <div id="movie037_play">Play Movie 037</div><br />
+        <div id="movie040_play">Play Movie 040</div><br />
+        <div id="movie047_play">Play Movie 047</div><br />
+        <div id="movie049_play">Play Movie 049</div><br />
+        <div id="movie050_play">Play Movie 050</div><br />
+        <div id="movie051_play">Play Movie 051</div><br />
 
-        <a id="movie000_stop">Stop Movie 000</a><br />
-        <a id="movie001_stop">Stop Movie 001</a><br />
-        <a id="movie008_stop">Stop Movie 008</a><br />
-        <a id="movie010_stop">Stop Movie 010</a><br />
-        <a id="movie020_stop">Stop Movie 020</a><br />
-        <a id="movie025_stop">Stop Movie 025</a><br />
-        <a id="movie026_stop">Stop Movie 026</a><br />
-        <a id="movie027_stop">Stop Movie 027</a><br />
-        <a id="movie034_stop">Stop Movie 034</a><br />
-        <a id="movie035_stop">Stop Movie 035</a><br />
-        <a id="movie037_stop">Stop Movie 037</a><br />
-        <a id="movie040_stop">Stop Movie 040</a><br />
-        <a id="movie047_stop">Stop Movie 047</a><br />
-        <a id="movie049_stop">Stop Movie 049</a><br />
-        <a id="movie050_stop">Stop Movie 050</a><br />
-        <a id="movie051_stop">Stop Movie 051</a><br />
+        <div id="movie000_stop">Stop Movie 000</div><br />
+        <div id="movie001_stop">Stop Movie 001</div><br />
+        <div id="movie008_stop">Stop Movie 008</div><br />
+        <div id="movie010_stop">Stop Movie 010</div><br />
+        <div id="movie020_stop">Stop Movie 020</div><br />
+        <div id="movie025_stop">Stop Movie 025</div><br />
+        <div id="movie026_stop">Stop Movie 026</div><br />
+        <div id="movie027_stop">Stop Movie 027</div><br />
+        <div id="movie034_stop">Stop Movie 034</div><br />
+        <div id="movie035_stop">Stop Movie 035</div><br />
+        <div id="movie037_stop">Stop Movie 037</div><br />
+        <div id="movie040_stop">Stop Movie 040</div><br />
+        <div id="movie047_stop">Stop Movie 047</div><br />
+        <div id="movie049_stop">Stop Movie 049</div><br />
+        <div id="movie050_stop">Stop Movie 050</div><br />
+        <div id="movie051_stop">Stop Movie 051</div><br />
 
-        <a id="movie000_pause">Pause Movie 000</a><br />
-        <a id="movie001_pause">Pause Movie 001</a><br />
-        <a id="movie008_pause">Pause Movie 008</a><br />
-        <a id="movie010_pause">Pause Movie 010</a><br />
-        <a id="movie020_pause">Pause Movie 020</a><br />
-        <a id="movie025_pause">Pause Movie 025</a><br />
-        <a id="movie026_pause">Pause Movie 026</a><br />
-        <a id="movie027_pause">Pause Movie 027</a><br />
-        <a id="movie034_pause">Pause Movie 034</a><br />
-        <a id="movie035_pause">Pause Movie 035</a><br />
-        <a id="movie037_pause">Pause Movie 037</a><br />
-        <a id="movie040_pause">Pause Movie 040</a><br />
-        <a id="movie047_pause">Pause Movie 047</a><br />
-        <a id="movie049_pause">Pause Movie 049</a><br />
-        <a id="movie050_pause">Pause Movie 050</a><br />
-        <a id="movie051_pause">Pause Movie 051</a><br />
+        <div id="movie000_pause">Pause Movie 000</div><br />
+        <div id="movie001_pause">Pause Movie 001</div><br />
+        <div id="movie008_pause">Pause Movie 008</div><br />
+        <div id="movie010_pause">Pause Movie 010</div><br />
+        <div id="movie020_pause">Pause Movie 020</div><br />
+        <div id="movie025_pause">Pause Movie 025</div><br />
+        <div id="movie026_pause">Pause Movie 026</div><br />
+        <div id="movie027_pause">Pause Movie 027</div><br />
+        <div id="movie034_pause">Pause Movie 034</div><br />
+        <div id="movie035_pause">Pause Movie 035</div><br />
+        <div id="movie037_pause">Pause Movie 037</div><br />
+        <div id="movie040_pause">Pause Movie 040</div><br />
+        <div id="movie047_pause">Pause Movie 047</div><br />
+        <div id="movie049_pause">Pause Movie 049</div><br />
+        <div id="movie050_pause">Pause Movie 050</div><br />
+        <div id="movie051_pause">Pause Movie 051</div><br />
 
-        <a id="check_status">Check Status</a><br />
+        <div id="check_status">Check Status</div><br />
       </div>
     </div>
     <script type="text/javascript">
+    <!--
     var isCanPlay000 = false;
     var isCanPlay001 = false;
     var isCanPlay008 = false;
@@ -1070,6 +1070,7 @@ a:not([href]):not([tabindex]) {
         setTimeout(movieCheck, 5000);
 
     });
+    -->
     </script>
   </body>
 </html>
