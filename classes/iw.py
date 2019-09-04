@@ -18,8 +18,8 @@ from selenium.webdriver.chrome.options import Options
 class InteractiveWall():
     _m_bgm_id = ''
     _m_max_movie_count = 3
-    DEPTH_SENSOR_WIDTH = 640
-    DEPTH_SENSOR_HEIGHT = 480
+    DEPTH_SENSOR_WIDTH = 1280
+    DEPTH_SENSOR_HEIGHT = 720
     DEFAULT_MAX_MOVIE_COUNT = 3
     SETTING_FILE_NAME = 'setting.txt'
     MOVIE_STATUS_KEY = '_status'
@@ -219,7 +219,7 @@ class InteractiveWall():
                                 ++num
         except Exception as e:
             # print("Error at the first block {0}".format(e))
-            print("IW has stopped")
+            print("IW has stopped: {0}".format(e))
 
     @staticmethod
     def on_sense_devices_changed(removed, added):

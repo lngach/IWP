@@ -69,7 +69,6 @@ class DeviceData():
                         for i in range(self.width):
                             self.distance[i] = float(self.depth[int(i + int(touchline) *
                                                           self.width)] * self.sensor.get_depth_scale())
-                print(self.distance)
             except Exception as e:
                 print(e)
                 return False
