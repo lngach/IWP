@@ -81,7 +81,7 @@ class InteractiveWall():
                                                         hit_area)
                                                 except Exception as e:
                                                     print(
-                                                        'Error at fifth block {0}'.format(e))
+                                                        'Error while getting hit_area {0}'.format(e))
 
                                     else:
                                         str_array2 = str_array[1].strip().split(
@@ -97,7 +97,7 @@ class InteractiveWall():
                                                     wait_movie_data)
                                             except Exception as e:
                                                 print(
-                                                    'Error at third block {0}'.format(e))
+                                                    'Error while getting wait movie data {0}'.format(e))
                                 else:
                                     str_array2 = str_array[1].strip().split(
                                         ',')
@@ -122,14 +122,14 @@ class InteractiveWall():
                                                 device_setting_info)
                                         except Exception as e:
                                             print(
-                                                'Error at third block {0}'.format(e))
+                                                'Error while getting device info {0}'.format(e))
                             else:
                                 try:
                                     InteractiveWall._m_max_movie_count = str_array[1].strip(
                                     )
                                 except Exception as e:
                                     print(
-                                        'Error at second block {0}'.format(e))
+                                        'Error while getting max movie count {0}'.format(e))
 
                         else:
                             InteractiveWall._m_content_path = str_array[1].strip(
